@@ -1,22 +1,14 @@
 import { provideRouter, RouterConfig }  from '@angular/router';
 
-import { crisisCenterRoutes } from './crisis-center/crisis-center.routes';
-import { heroesRoutes }       from './heroes/heroes.routes';
-
-import { loginRoutes,
-  authProviders }      from './login.routes';
-
-import { CanDeactivateGuard } from './interfaces';
+import { dashboardRoutes }       from './dashboard/dashboard.routes';
 
 export const routes: RouterConfig = [
-  ...heroesRoutes,
-  ...loginRoutes,
-  ...crisisCenterRoutes
+  ...dashboardRoutes,
 ];
 
 export const appRouterProviders = [
   provideRouter(routes),
-  authProviders,
-  CanDeactivateGuard
+  // authProviders,
+  // CanDeactivateGuard
 ];
 
