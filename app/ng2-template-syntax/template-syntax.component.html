@@ -1,8 +1,24 @@
 <p>My current hero is {{currentHero.name}}</p>
 <p>The sum of 1 + 1 is {{getVal()}}</p>
 
-<div class="btn-group">
+<div class="btn-group" [class.special] = 'isSpecialCSS'>
   <button type="button" class="btn btn-default" [disabled]="isGood">Left</button>
   <button type="button" class="btn btn-default">Middle</button>
   <button type="button" class="btn btn-default">Right</button>
 </div>
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td [attr.colspan] = '1 + 1'> colspan is 2</td>
+		</tr>
+    <tr>
+      <td>TD1</td><td>TD2</td>
+    </tr>
+	</tbody>
+</table>
