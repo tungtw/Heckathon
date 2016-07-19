@@ -7,6 +7,11 @@ export const dashboardRoutes: RouterConfig = [
     pathMatch: 'full'
   },
   {
+    path: 'dash-head',
+    redirectTo: '/dashboard',
+    pathMatch: 'full'
+  },
+  {
     path: 'dashboard',
     component: Dashboard,
     children: [
