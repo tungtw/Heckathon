@@ -7,7 +7,6 @@ import {SidebarComponent} from "../shared/sidebar/sidebar.component";
     moduleId: module.id,
     selector: 'selector',
     templateUrl: './dashboard.component.html',
-    styleUrls: ['../shared/style-shared.css'],
     directives: [ROUTER_DIRECTIVES, TopNavComponent, SidebarComponent]
 })
 export class Dashboard implements OnInit {
