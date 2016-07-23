@@ -4,7 +4,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 @Component({
     moduleId: module.id,
 	selector: 'chart-cmp',
-	templateUrl: 'charts.html',
+	templateUrl: 'chart.component.html',
     directives: [ROUTER_DIRECTIVES]
 })
 

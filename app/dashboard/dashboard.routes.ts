@@ -1,6 +1,8 @@
 import {RouterConfig}          from '@angular/router';
 import {Dashboard}          from './dashboard.component';
-import {ChartComponent} from "../pages/charts/components/charts";
+import {ChartComponent} from "../pages/charts/charts.component";
+import {TableComponent} from "../pages/tables/components/tables";
+import {FormComponent} from "../pages/forms/components/forms";
 export const dashboardRoutes:RouterConfig = [
     {
         path: '',
@@ -19,15 +21,26 @@ export const dashboardRoutes:RouterConfig = [
                 path: 'chart',
                 component: ChartComponent
             },
-            // {
-            //   path: ':id',
-            //   component: CrisisDetailComponent,
-            //   canDeactivate: [CanDeactivateGuard]
-            // },
-            // {
-            //   path: '',
-            //   component: CrisisListComponent
-            // }
         ]
-    }
+    },
+    {
+        path: 'dashboard',
+        component: Dashboard,
+        children: [
+            {
+                path: 'table',
+                component: TableComponent
+            },
+        ]
+    },
+    {
+        path: 'dashboard',
+        component: Dashboard,
+        children: [
+            {
+                path: 'forms',
+                component: FormComponent
+            },
+        ]
+    },
 ];
