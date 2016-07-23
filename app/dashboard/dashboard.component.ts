@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ROUTER_DIRECTIVES} from '@angular/router';
 import {TopNavComponent} from "../shared/topnav/topnav";
-import {SidebarComponent} from "../shared/sidebar/sidebar";
+import {SidebarComponent} from "../shared/sidebar/sidebar.component";
 
 @Component({
     moduleId: module.id,

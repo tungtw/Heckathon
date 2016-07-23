@@ -6,7 +6,7 @@ import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
 @Component({
 	moduleId: module.id,
 	selector: 'sidebar-cmp',
-	templateUrl: 'sidebar.html',
+	templateUrl: 'sidebar.component.html',
     styleUrls:['../style-shared.css'],
 	directives: [ROUTER_DIRECTIVES, CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
