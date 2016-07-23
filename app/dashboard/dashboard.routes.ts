@@ -3,15 +3,22 @@ import {Dashboard}          from './dashboard.component';
 import {ChartComponent} from "../pages/charts/charts.component";
 import {TableComponent} from "../pages/tables/components/tables";
 import {FormComponent} from "../pages/forms/components/forms";
+import {HomeComponent} from "../pages/home/components/home";
 export const dashboardRoutes:RouterConfig = [
     {
         path: '',
-        redirectTo: '/dashboard',
+        redirectTo: '/dashboard/home',
         pathMatch: 'full'
     },
     {
         path: 'dashboard',
-        component: Dashboard
+        component: Dashboard,
+        children: [
+            {
+                path: 'home',
+                component: HomeComponent
+            },
+        ]
     },
     {
         path: 'dashboard',
