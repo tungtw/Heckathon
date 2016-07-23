@@ -6,9 +6,11 @@
         <a [routerLink]="['/dashboard', '/home']" class="list-group-item">
             <i class="fa fa-fw fa-dashboard"></i> Dashboard
         </a>
-        <a [routerLink]="['/dashboard', '/chart']" class="list-group-item">
-            <i class="fa fa-fw fa-bar-chart-o"></i> Charts
-        </a>
+        <p-panelMenu [model]="chartItems" [style]="{'background-color': 'fuchsia'}"></p-panelMenu>
+        <!--<a [routerLink]="['/dashboard', '/chart']" class="list-group-item">-->
+
+            <!--<i class="fa fa-fw fa-bar-chart-o"></i> Charts-->
+        <!--</a>-->
         <a [routerLink]="['/dashboard', '/table']" class="list-group-item">
             <i class="fa fa-fw fa-table"></i> Tables
         </a>
