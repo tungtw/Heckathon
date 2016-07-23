@@ -7,6 +7,7 @@ import {DROPDOWN_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
     moduleId: module.id,
     selector: 'top-nav',
     templateUrl: 'topnav.html',
+    styleUrls:['../style-shared.css'],
     encapsulation: ViewEncapsulation.None,
     directives: [DROPDOWN_DIRECTIVES, CORE_DIRECTIVES, ROUTER_DIRECTIVES]
 })
