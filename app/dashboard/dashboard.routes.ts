@@ -25,7 +25,7 @@ export const dashboardRoutes:RouterConfig = [
         component: Dashboard,
         children: [
             {
-                path: 'chart',
+                path: 'chart/:id',
                 component: ChartComponent
             },
         ]

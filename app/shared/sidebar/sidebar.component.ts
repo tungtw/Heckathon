@@ -36,8 +36,8 @@ export class SidebarComponent implements OnInit {
 
     private getItems():Array<ChartItem> {
         return [
-            new ChartItem('Chart 1', 'fa fa-line-chart', ()=>{this.router.navigate(['/dashboard', '/chart'])}),
-            new ChartItem('Chart 2', 'fa fa-line-chart', ()=>{this.router.navigate(['/dashboard', '/chart'])})
+            new ChartItem('Chart 1', 'fa fa-line-chart', ()=>{this.router.navigate(['/dashboard', '/chart', 1])}),
+            new ChartItem('Chart 2', 'fa fa-line-chart', ()=>{this.router.navigate(['/dashboard', '/chart', 2])})
         ];
     }
 

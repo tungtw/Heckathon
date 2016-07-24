@@ -1,6 +1,7 @@
-import { Injectable }     from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { Observable }     from 'rxjs/Observable';
+///<reference path="../data/chart-data.ts"/>
+import {Injectable}     from '@angular/core';
+import {Http, Response} from '@angular/http';
+import {Observable}     from 'rxjs/Observable';
 import {ChartData} from "../data/chart-data";
 
 @Injectable()
@@ -24,4 +25,7 @@ export class ChartDataService {
     //     console.error(errMsg); // log to console instead
     //     return Observable.throw(errMsg);
     // }
+    getChartData(chartId:number): Promise<ChartData[]> {
+        return Promise.resolve([]);
+    }
 }
