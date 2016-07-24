@@ -2,8 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ROUTER_DIRECTIVES, Router} from '@angular/router';
 import {CORE_DIRECTIVES, FORM_DIRECTIVES} from '@angular/common';
 import {Menu, MenuItem, Button, PanelMenu,} from 'primeng/primeng';
-import {ChartItem} from "./sidebar-item";
-
 
 @Component({
     moduleId: module.id,
@@ -14,32 +12,14 @@ import {ChartItem} from "./sidebar-item";
 })
 
 export class SidebarComponent implements OnInit {
-    private _chartItems:MenuItem[];
 
-    get chartItems():MenuItem[] {
-        return this._chartItems;
+    constructor(private router:Router) {
     }
 
-    set chartItems(value:MenuItem[]) {
-        this._chartItems = value;
-    }
-    constructor(private router: Router) {}
     ngOnInit():any {
-        this._chartItems = [
-            {
-                label: 'Chart',
-                icon: 'fa-area-chart',
-                items: this.getItems()
-            }
-        ];
+
     }
 
-    private getItems():Array<ChartItem> {
-        return [
-            new ChartItem('Chart 1', 'fa fa-line-chart', ()=>{this.router.navigate(['/dashboard', '/chart', 1])}),
-            new ChartItem('Chart 2', 'fa fa-line-chart', ()=>{this.router.navigate(['/dashboard', '/chart', 2])})
-        ];
-    }
 
     isActive = false;
     showMenu:string = '';

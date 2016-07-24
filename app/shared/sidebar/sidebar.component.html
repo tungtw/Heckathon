@@ -6,11 +6,21 @@
         <a [routerLink]="['/dashboard', '/home']" class="list-group-item">
             <i class="fa fa-fw fa-dashboard"></i> Dashboard
         </a>
-        <p-panelMenu [model]="chartItems" [style]="{'background-color': 'fuchsia'}"></p-panelMenu>
-        <!--<a [routerLink]="['/dashboard', '/chart']" class="list-group-item">-->
-
-            <!--<i class="fa fa-fw fa-bar-chart-o"></i> Charts-->
-        <!--</a>-->
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('pages')">
+                <span><i class="fa fa-fw fa-bar-chart-o"></i> &nbsp; Chart</span>
+            </a>
+            <li class="nested" [ngClass]="{'expand' : showMenu === 'pages' }">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/dashboard', '/chart', 1]"><span>Chart 1</span></a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/dashboard', '/chart', 2]"><span>Chart 2</span></a>
+                    </li>
+                </ul>
+            </li>
+        </div>
         <a [routerLink]="['/dashboard', '/table']" class="list-group-item">
             <i class="fa fa-fw fa-table"></i> Tables
         </a>

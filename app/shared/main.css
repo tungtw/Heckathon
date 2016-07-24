@@ -4949,8 +4949,8 @@ a:hover {
   height: auto; }
   .nested-menu .expand ul.submenu li a {
     color: #FFF;
-    padding: 10px;
-    display: block; }
+    padding: 4px;
+    display: inline-block; }
 
 .loader,
 .loader:before,
