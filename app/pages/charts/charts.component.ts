@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ROUTER_DIRECTIVES, ActivatedRoute} from '@angular/router';
+import {CHART_DIRECTIVES} from 'ng2-charts/ng2-charts';
 import {ChartDataService} from "../../shared/services/chart-data.service";
 import {ChartData} from "../../shared/data/chart-data";
 
@@ -7,7 +8,7 @@ import {ChartData} from "../../shared/data/chart-data";
     moduleId: module.id,
     selector: 'chart-cmp',
     templateUrl: 'chart.component.html',
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES, CHART_DIRECTIVES],
     providers:[ChartDataService]
 })
 
