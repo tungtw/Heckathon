@@ -17,6 +17,7 @@ export class ChartComponent implements OnInit {
     private sub:any;
     private chartId:number;
     private chartData:ChartData[];
+    data:any;
     //Observable<string>;
     constructor(private route:ActivatedRoute, private chartDataService:ChartDataService) {
         this.route.params.subscribe(params => {
