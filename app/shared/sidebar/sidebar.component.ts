@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ROUTER_DIRECTIVES} from '@angular/router';
+import {ROUTER_DIRECTIVES, Router} from '@angular/router';
 import {CORE_DIRECTIVES, FORM_DIRECTIVES} from '@angular/common';
 import {Menu, MenuItem, Button, PanelMenu,} from 'primeng/primeng';
+import {ChartItem} from "./sidebar-item";
 
 
 @Component({
@@ -13,26 +14,30 @@ import {Menu, MenuItem, Button, PanelMenu,} from 'primeng/primeng';
 })
 
 export class SidebarComponent implements OnInit {
-    private chartItems:MenuItem[];
+    private _chartItems:MenuItem[];
 
+    get chartItems():MenuItem[] {
+        return this._chartItems;
+    }
+
+    set chartItems(value:MenuItem[]) {
+        this._chartItems = value;
+    }
+    constructor(private router: Router) {}
     ngOnInit():any {
-        this.chartItems = [
+        this._chartItems = [
             {
                 label: 'Chart',
                 icon: 'fa-area-chart',
-                items: [
-                    {
-                        label: 'Chart 1', icon: 'fa fa-line-chart', command: function () {
-                        alert("Chart 1 Click!");
-                    }
-                    },
-                    {
-                        label: 'Chart 2', icon: 'fa fa-line-chart', command: function () {
-                        alert("Chart 2 Click!");
-                    }
-                    }
-                ]
+                items: this.getItems()
             }
+        ];
+    }
+
+    private getItems():Array<ChartItem> {
+        return [
+            new ChartItem('Chart 1', 'fa fa-line-chart', ()=>{this.router.navigate(['/dashboard', '/chart'])}),
+            new ChartItem('Chart 2', 'fa fa-line-chart', ()=>{this.router.navigate(['/dashboard', '/chart'])})
         ];
     }
 
