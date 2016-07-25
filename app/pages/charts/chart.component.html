@@ -21,13 +21,17 @@
         <div class="col-xl-6">
             <div class="card card-block">
                 <div id="container" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto">
-                    <p-chart type="line" [data]="data"></p-chart>
+                    <p-chart *ngIf="chartId == 1" type="line" [data]="chartData"
+                             (onDataSelect)="selectData($event)"></p-chart>
                 </div>
             </div>
         </div>
         <div class="col-xl-6">
             <div class="card card-block">
-                <div id="area-chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                <div id="area-chart" style="min-width: 310px; height: 400px; margin: 0 auto">
+                    <p-chart *ngIf="chartId == 2" type="line" [data]="chartData"
+                             (onDataSelect)="selectData($event)"></p-chart>
+                </div>
             </div>
         </div>
         <h1>&nbsp;</h1>

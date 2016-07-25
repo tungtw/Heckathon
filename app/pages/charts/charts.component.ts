@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ROUTER_DIRECTIVES, ActivatedRoute} from '@angular/router';
-import {UIChart} from 'primeng/primeng';
+import {UIChart, Message} from 'primeng/primeng';
 import {ChartDataService} from "../../shared/services/chart-data.service";
 import {ChartData} from "../../shared/data/chart-data";
 
@@ -14,40 +14,41 @@ import {ChartData} from "../../shared/data/chart-data";
 
 export class ChartComponent implements OnInit {
 
+    chartId:number;
+    chartData:any;
+
     private sub:any;
-    private chartId:number;
-    private chartData:ChartData[];
     data:any;
+    msgs:Message[];
     //Observable<string>;
     constructor(private route:ActivatedRoute, private chartDataService:ChartDataService) {
         this.route.params.subscribe(params => {
             this.chartId = +params['id'];
         });
-        //Test Data
-        this.data = {
-            labels: ['1', '2', '3', '4', '5', '6', '7'],
-            datasets: [
-                {
-                    label: 'First Dataset',
-                    data: [65, 59, 80, 81, 56, 55, 40]
-                },
-                {
-                    label: 'Second Dataset',
-                    data: [28, 48, 40, 19, 86, 27, 90]
-                }
-            ]
-        };
-
-        //
     }
 
     ngOnInit():any {
         this.sub = this.route.params.subscribe(params => {
             this.chartId = +params['id'];
-            this.chartDataService.getChartData(this.chartId)
-                .then(data => {
-                    this.chartData = data;
-                });
+            this.chartData = this.chartDataService.getChartData(this.chartId);
+        });
+
+        // this.sub = this.route.params.subscribe(params => {
+        //     this.chartId = +params['id'];
+        //     this.chartDataService.getChartData(this.chartId)
+        //         .then((data:any)=> {
+        //             this.chartData = data;
+        //         });
+        // });
+    }
+
+    selectData(event:any) {
+        this.msgs = [];
+        this.msgs.push({
+            severity: 'info',
+            summary: 'Data Selected',
+            'detail': this.data.datasets[event.element._datasetIndex].data[event.element._index]
         });
     }
+
 }
