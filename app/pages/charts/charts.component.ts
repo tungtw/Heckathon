@@ -2,14 +2,13 @@ import {Component, OnInit, OnDestroy} from '@angular/core';
 import {ROUTER_DIRECTIVES, ActivatedRoute} from '@angular/router';
 import {UIChart, Message} from 'primeng/primeng';
 import {ChartDataService} from "../../shared/services/chart-data.service";
-import {TestService} from "../../shared/services/test.service";
 
 @Component({
     moduleId: module.id,
     selector: 'chart-cmp',
     templateUrl: 'chart.component.html',
     directives: [ROUTER_DIRECTIVES, UIChart],
-    providers: [ChartDataService, TestService]
+    providers: [ChartDataService]
 })
 
 export class ChartComponent implements OnInit, OnDestroy {
@@ -21,7 +20,7 @@ export class ChartComponent implements OnInit, OnDestroy {
     private sub:any;
     msgs:Message[];
 
-    constructor(private route:ActivatedRoute, private chartDataService:TestService) {
+    constructor(private route:ActivatedRoute, private chartDataService:ChartDataService) {
         this.route.params.subscribe(params => {
             this.chartId = +params['id'];
         });
