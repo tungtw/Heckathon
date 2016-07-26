@@ -22,10 +22,9 @@
             <div class="card card-block">
                 <div id="container" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto">
                     <ul>
-                        <li *ngFor="let d of chartData">
-                            <p-chart *ngIf="chartId == 1" type="line" [data]="d"
+                        <li *ngFor="let cdata of chartData">
+                            <p-chart *ngIf="chartId == 1" type="line" [data]="cdata"
                                      (onDataSelect)="selectData($event)"></p-chart>
-                            <!--{{d["labels"]}}-->
                         </li>
                     </ul>
 
@@ -36,10 +35,9 @@
             <div class="card card-block">
                 <div id="area-chart" style="min-width: 310px; height: 400px; margin: 0 auto">
                     <ul>
-                        <li *ngFor="let d of chartData">
-                            <p-chart *ngIf="chartId == 2" type="line" [data]="d"
+                        <li *ngFor="let cdata of chartData">
+                            <p-chart *ngIf="chartId == 2" type="line" [data]="cdata"
                                      (onDataSelect)="selectData($event)"></p-chart>
-                            <!--{{d["labels"]}}-->
                         </li>
                     </ul>
                 </div>
