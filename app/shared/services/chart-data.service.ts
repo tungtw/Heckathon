@@ -8,7 +8,7 @@ export class ChartDataService {
     constructor(private _http:Http) {
     }
 
-    private chartDataUrl = 'app/shared/data/chart-data.json';  // URL to web API
+    private chartDataUrl = 'app/shared/data/chart-data1.json';  // URL to web API
 
     getChartData(chartId:number):any {
         if(chartId == 1) {

@@ -33,7 +33,7 @@ export class ChartComponent implements OnInit {
     ngOnInit():any {
         this.sub = this.route.params.subscribe(params => {
             this.chartId = +params['id'];
-            this.chartDataService.getChartData().subscribe(
+            this.chartDataService.getChartData(this.chartId).subscribe(
                 data=>this.chartData = data,
                 error=>this.errorMessage = <any>error);
             // this.chartData = this.chartDataService.getChartData(this.chartId);
