@@ -5,7 +5,7 @@ import {ChartData} from "../data/chart-data";
 
 @Injectable()
 export class TestService {
-    private chartDataUrl = 'app/chart-data.json';  // URL to web API
+    private chartDataUrl = 'app/shared/data/chart-data.json';  // URL to web API
     constructor(private http: Http) {
     }
     getChartData (): Observable<ChartData[]> {
