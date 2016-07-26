@@ -13,18 +13,16 @@ export class ChartDataService {
     getChartData(id:number):Observable<ChartData[]> {
         let chartDataUrl = id == 1 ? this.chartData1Url : this.chartData2Url;
         return this.http.get(chartDataUrl)
-            .map(this.extractData)
-            .catch(this.handleError);
+            .map(ChartDataService.extractData)
+            .catch(ChartDataService.handleError);
     }
 
-    private extractData(res:Response) {
+    private static extractData(res:Response) {
         let body = res.json(); //parse the response data into a JSON object
         return body.data || {};
     }
 
-    private handleError(error:any) {
-        // In a real world app, we might use a remote logging infrastructure
-        // We'd also dig deeper into the error to get a better message
+    private static handleError(error:any) {
         let errMsg = (error.message) ? error.message :
             error.status ? `${error.status} - ${error.statusText}` : 'Server error';
         console.error(errMsg); // log to console instead
