@@ -10,8 +10,8 @@ export class ChartDataService {
     constructor(private http:Http) {
     }
 
-    getChartData(id:number):Observable<ChartData[]> {
-        let chartDataUrl = id == 1 ? this.chartData1Url : this.chartData2Url;
+    getChartData(chartNo:number):Observable<ChartData[]> {
+        let chartDataUrl = this.chartData2Url + '/' + chartNo;//id == 1 ? this.chartData1Url : this.chartData2Url;
         return this.http.get(chartDataUrl)
             .map(ChartDataService.extractData)
             .catch(ChartDataService.handleError);

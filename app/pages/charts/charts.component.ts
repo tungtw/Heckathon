@@ -13,7 +13,7 @@ import {ChartDataService} from "../../shared/services/chart-data.service";
 
 export class ChartComponent implements OnInit, OnDestroy {
 
-    chartId:number;
+    chartNo:number;
     chartData:any;
     errorMessage:any;
 
@@ -21,15 +21,12 @@ export class ChartComponent implements OnInit, OnDestroy {
     msgs:Message[];
 
     constructor(private route:ActivatedRoute, private chartDataService:ChartDataService) {
-        this.route.params.subscribe(params => {
-            this.chartId = +params['id'];
-        });
     }
 
     ngOnInit():any {
         this.sub = this.route.params.subscribe(params => {
-            this.chartId = +params['id'];
-            this.chartDataService.getChartData(this.chartId).subscribe(
+            this.chartNo = +params['chartNo'];
+            this.chartDataService.getChartData(this.chartNo).subscribe(
                 data=>this.chartData = data,
                 error=>this.errorMessage = <any>error);
         });
