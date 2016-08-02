@@ -27,7 +27,7 @@
         },
         {
           "label": "Second Dataset",
-          "fill": false,
+          "fill": true,
           "borderColor": "#4bc0c0",
           "data": [
             28,

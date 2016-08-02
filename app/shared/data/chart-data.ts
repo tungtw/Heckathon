@@ -1,4 +1,4 @@
 export class ChartData {
-    label: string;
-    data: number[];
+    // label: string;
+    // data: number[];
 }
