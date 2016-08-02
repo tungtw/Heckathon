@@ -5,8 +5,7 @@ import {ChartData} from "../data/chart-data";
 
 @Injectable()
 export class ChartDataService {
-    //private chartData1Url = 'app/shared/data/chart-data1.json';  // URL to web API
-    private chartData1Url = 'app/shared/data/test-data.json';  // URL to web API
+    private chartData1Url = 'app/shared/data/chart-data1.json';  // URL to web API
     private chartData2Url = 'http://localhost:11992/api/ChartData';  // URL to web API
     constructor(private http:Http) {
     }
